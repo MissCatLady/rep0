@@ -83,7 +83,8 @@ public class ticTacToeGame {
 	 * @throws IOException 
 	 */
 	public static void updateBoard(int pos, String player) throws IOException {
-		while (gameboardArray[pos] == "[X]" || gameboardArray[pos] == "[Y]") {
+		while (gameboardArray[pos] == "[X]" || gameboardArray[pos] == "[O
+]") {
 			System.out.println("Sorry that spot is taken, try again:");
 			pos = askInput() - 1;
 		}
