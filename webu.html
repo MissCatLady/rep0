@@ -352,15 +352,20 @@ myTspans = myGroup.selectAll("tspan").attr({
     	opacity: 0
 });
 
-function animFunc( element ) {
+function animFunc( element, speed) {
 	Snap.animate(0,1, function( value ) {
 		element.attr({ opacity: value, rotate: (value * 360) });
-	}, 1500, mina.easeout );
+	}, speed, mina.easeout );
 }
 
 for( var i=0; i < myTspans.length; i++ ) {
+	var speed = 2000;
+
+	if (i > 30) {
+		speed = 500;
+	}
 	setTimeout( 
-			animFunc.bind(null, myTspans[i]) 
+			animFunc.bind(null, myTspans[i], speed) 
 		, i * 100);
 }
 
